@@ -12,7 +12,7 @@ export const metadata = {
   title: "Vermilion Web Labs — Where Ideas Become Digital.",
   description: "Studio produk digital premium dan web interaktif terindah bertema gelap dan elegan dari Vermilion Web Labs.",
   icons: {
-    icon: "https://api.iconify.design/solar:gift-bold.svg?color=%23e63946",
+    icon: "/favicon-vermilion.png",
   },
 };
 
