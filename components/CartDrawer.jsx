@@ -235,39 +235,20 @@ Akses digital mohon dikirimkan ke email di atas. Berikut saya lampirkan bukti pe
                     </div>
                   </div>
 
-                  <div className="payment-methods-block" style={{ marginTop: "16px", padding: "16px", background: "var(--bg-secondary)", border: "1px solid var(--border-subtle)", borderRadius: "var(--border-radius-sharp)", fontSize: "12px" }}>
+                  <div className="payment-methods-container">
                     <p style={{ marginBottom: "12px", fontWeight: "600", color: "var(--text-primary)" }}>Pilih Metode Pembayaran:</p>
                     
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "16px" }}>
+                    <div className="payment-methods-grid">
                       {paymentOptions.map(option => (
                         <div 
                           key={option.id}
+                          className={`payment-method-card ${selectedPayment?.id === option.id ? 'selected' : ''}`}
                           onClick={() => setSelectedPayment(option)}
-                          style={{
-                            padding: "8px",
-                            border: selectedPayment?.id === option.id ? "1px solid var(--accent-gold)" : "1px solid var(--border-subtle)",
-                            borderRadius: "8px",
-                            cursor: "pointer",
-                            textAlign: "center",
-                            background: selectedPayment?.id === option.id ? "rgba(230, 57, 70, 0.05)" : "var(--bg-primary)",
-                            transition: "all 0.2s",
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            gap: "8px",
-                            minHeight: "75px"
-                          }}
                         >
-                          <div style={{ background: "#ffffff", padding: "4px 8px", borderRadius: "4px", display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "32px" }}>
-                            <img src={option.logo} alt={option.name} style={{ height: "100%", maxWidth: "100%", objectFit: "contain" }} />
+                          <div className="payment-method-logo">
+                            <img src={option.logo} alt={option.name} />
                           </div>
-                          <span style={{
-                            color: selectedPayment?.id === option.id ? "var(--accent-gold)" : "var(--text-secondary)",
-                            fontWeight: selectedPayment?.id === option.id ? "600" : "400",
-                            fontSize: "10px",
-                            letterSpacing: "0.5px"
-                          }}>
+                          <span className="payment-method-name">
                             {option.name}
                           </span>
                         </div>
@@ -275,7 +256,7 @@ Akses digital mohon dikirimkan ke email di atas. Berikut saya lampirkan bukti pe
                     </div>
 
                     {selectedPayment && (
-                      <div style={{ padding: "12px", background: "rgba(0,0,0,0.2)", borderRadius: "4px", textAlign: "center", border: "1px dashed var(--border-subtle)" }}>
+                      <div style={{ padding: "12px", background: "rgba(0,0,0,0.2)", borderRadius: "4px", textAlign: "center", border: "1px dashed var(--border-subtle)", marginBottom: "12px" }}>
                         <p style={{ color: "var(--text-secondary)", marginBottom: "4px" }}>Transfer ke Rekening / Nomor {selectedPayment.name}:</p>
                         <p style={{ fontSize: "16px", fontWeight: "bold", color: "var(--text-primary)", letterSpacing: "1px" }}>{selectedPayment.account}</p>
                         <p style={{ color: "var(--text-muted)", fontSize: "11px", marginTop: "4px" }}>a.n. {selectedPayment.holder}</p>
