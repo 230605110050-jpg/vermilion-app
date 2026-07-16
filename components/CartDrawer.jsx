@@ -23,12 +23,12 @@ export default function CartDrawer() {
   const [selectedPayment, setSelectedPayment] = useState(null);
 
   const paymentOptions = [
-    { id: "bri", name: "BRI", account: "166201018349500", holder: "SUNANDAR SUHERMAN" },
-    { id: "mandiri", name: "MANDIRI", account: "1440024597335", holder: "SUNANDAR SUHERMAN" },
-    { id: "seabank", name: "SEABANK", account: "901624712351", holder: "SUNANDAR SUHERMAN" },
-    { id: "jago", name: "BANK JAGO", account: "107639852185", holder: "SUNANDAR SUHERMAN" },
-    { id: "dana", name: "DANA", account: "083824981369", holder: "SUAEDAH" },
-    { id: "shopeepay", name: "SHOPEEPAY", account: "083824981369", holder: "SUNANDAR SUHERMAN" },
+    { id: "bri", name: "BRI", account: "166201018349500", holder: "SUNANDAR SUHERMAN", logo: "/payment-logos/bri.svg" },
+    { id: "mandiri", name: "MANDIRI", account: "1440024597335", holder: "SUNANDAR SUHERMAN", logo: "/payment-logos/mandiri.svg" },
+    { id: "seabank", name: "SEABANK", account: "901624712351", holder: "SUNANDAR SUHERMAN", logo: "/payment-logos/seabank.svg" },
+    { id: "jago", name: "BANK JAGO", account: "107639852185", holder: "SUNANDAR SUHERMAN", logo: "/payment-logos/jago.svg" },
+    { id: "dana", name: "DANA", account: "083824981369", holder: "SUAEDAH", logo: "/payment-logos/dana.svg" },
+    { id: "shopeepay", name: "SHOPEEPAY", account: "083824981369", holder: "SUNANDAR SUHERMAN", logo: "/payment-logos/shopeepay.svg" },
   ];
 
   const handleCloseDrawer = () => setIsDrawerOpen(false);
@@ -240,18 +240,32 @@ Akses digital mohon dikirimkan ke email di atas. Berikut saya lampirkan bukti pe
                           key={option.id}
                           onClick={() => setSelectedPayment(option)}
                           style={{
-                            padding: "10px",
+                            padding: "8px",
                             border: selectedPayment?.id === option.id ? "1px solid var(--accent-gold)" : "1px solid var(--border-subtle)",
-                            borderRadius: "4px",
+                            borderRadius: "8px",
                             cursor: "pointer",
                             textAlign: "center",
-                            background: selectedPayment?.id === option.id ? "rgba(230, 57, 70, 0.05)" : "transparent",
-                            color: selectedPayment?.id === option.id ? "var(--accent-gold)" : "var(--text-secondary)",
-                            fontWeight: selectedPayment?.id === option.id ? "600" : "400",
-                            transition: "all 0.2s"
+                            background: selectedPayment?.id === option.id ? "rgba(230, 57, 70, 0.05)" : "var(--bg-primary)",
+                            transition: "all 0.2s",
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            gap: "8px",
+                            minHeight: "75px"
                           }}
                         >
-                          {option.name}
+                          <div style={{ background: "#ffffff", padding: "4px 8px", borderRadius: "4px", display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "32px" }}>
+                            <img src={option.logo} alt={option.name} style={{ height: "100%", maxWidth: "100%", objectFit: "contain" }} />
+                          </div>
+                          <span style={{
+                            color: selectedPayment?.id === option.id ? "var(--accent-gold)" : "var(--text-secondary)",
+                            fontWeight: selectedPayment?.id === option.id ? "600" : "400",
+                            fontSize: "10px",
+                            letterSpacing: "0.5px"
+                          }}>
+                            {option.name}
+                          </span>
                         </div>
                       ))}
                     </div>
