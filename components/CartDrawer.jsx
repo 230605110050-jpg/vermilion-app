@@ -20,6 +20,16 @@ export default function CartDrawer() {
 
   const [checkoutStep, setCheckoutStep] = useState(1);
   const [formData, setFormData] = useState({ name: "", email: "", whatsapp: "" });
+  const [selectedPayment, setSelectedPayment] = useState(null);
+
+  const paymentOptions = [
+    { id: "bri", name: "BRI", account: "166201018349500" },
+    { id: "mandiri", name: "MANDIRI", account: "1440024597335" },
+    { id: "seabank", name: "SEABANK", account: "901624712351" },
+    { id: "jago", name: "BANK JAGO", account: "107639852185" },
+    { id: "dana", name: "DANA", account: "083824981369" },
+    { id: "shopeepay", name: "SHOPEEPAY", account: "083824981369" },
+  ];
 
   const handleCloseDrawer = () => setIsDrawerOpen(false);
   const handleOpenCheckout = () => {
@@ -57,6 +67,8 @@ ${itemDetailsText}---------------------------------
 Nama Panggilan: ${formData.name}
 Email: ${formData.email}
 Nomor WhatsApp: ${formData.whatsapp}
+
+Metode Pembayaran: ${selectedPayment ? selectedPayment.name : "-"}
 
 Akses digital mohon dikirimkan ke email di atas. Berikut saya lampirkan bukti pembayaran. Terima kasih!`;
 
@@ -220,17 +232,39 @@ Akses digital mohon dikirimkan ke email di atas. Berikut saya lampirkan bukti pe
                   </div>
 
                   <div className="payment-methods-block" style={{ marginTop: "16px", padding: "16px", background: "var(--bg-secondary)", border: "1px solid var(--border-subtle)", borderRadius: "var(--border-radius-sharp)", fontSize: "12px" }}>
-                    <p style={{ marginBottom: "12px", fontWeight: "600", color: "var(--text-primary)" }}>Pilihan Metode Pembayaran:</p>
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", color: "var(--text-secondary)" }}>
-                      <div><strong>BRI</strong><br/>166201018349500</div>
-                      <div><strong>MANDIRI</strong><br/>1440024597335</div>
-                      <div><strong>SEABANK</strong><br/>901624712351</div>
-                      <div><strong>BANK JAGO</strong><br/>107639852185</div>
-                      <div><strong>DANA</strong><br/>083824981369</div>
-                      <div><strong>SHOPEEPAY</strong><br/>083824981369</div>
+                    <p style={{ marginBottom: "12px", fontWeight: "600", color: "var(--text-primary)" }}>Pilih Metode Pembayaran:</p>
+                    
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "16px" }}>
+                      {paymentOptions.map(option => (
+                        <div 
+                          key={option.id}
+                          onClick={() => setSelectedPayment(option)}
+                          style={{
+                            padding: "10px",
+                            border: selectedPayment?.id === option.id ? "1px solid var(--accent-gold)" : "1px solid var(--border-subtle)",
+                            borderRadius: "4px",
+                            cursor: "pointer",
+                            textAlign: "center",
+                            background: selectedPayment?.id === option.id ? "rgba(230, 57, 70, 0.05)" : "transparent",
+                            color: selectedPayment?.id === option.id ? "var(--accent-gold)" : "var(--text-secondary)",
+                            fontWeight: selectedPayment?.id === option.id ? "600" : "400",
+                            transition: "all 0.2s"
+                          }}
+                        >
+                          {option.name}
+                        </div>
+                      ))}
                     </div>
+
+                    {selectedPayment && (
+                      <div style={{ padding: "12px", background: "rgba(0,0,0,0.2)", borderRadius: "4px", textAlign: "center", border: "1px dashed var(--border-subtle)" }}>
+                        <p style={{ color: "var(--text-secondary)", marginBottom: "4px" }}>Transfer ke Rekening / Nomor {selectedPayment.name}:</p>
+                        <p style={{ fontSize: "16px", fontWeight: "bold", color: "var(--text-primary)", letterSpacing: "1px" }}>{selectedPayment.account}</p>
+                      </div>
+                    )}
+
                     <p style={{ marginTop: "12px", fontStyle: "italic", fontSize: "11px", color: "var(--text-muted)" }}>
-                      *Selesaikan pembayaran ke salah satu rekening di atas dan kirimkan bukti transfer setelah klik <strong>Bayar Sekarang</strong>.
+                      *Pilih salah satu metode pembayaran di atas, lakukan transfer, dan kirimkan bukti transfer setelah klik <strong>Bayar Sekarang</strong>.
                     </p>
                   </div>
 
@@ -238,7 +272,7 @@ Akses digital mohon dikirimkan ke email di atas. Berikut saya lampirkan bukti pe
                     <button id="change-details-btn" className="modal-btn-secondary" onClick={() => setCheckoutStep(1)}>
                       Ubah
                     </button>
-                    <button id="pay-now-btn" className="modal-btn-primary" onClick={handlePaymentRedirect}>
+                    <button id="pay-now-btn" className="modal-btn-primary" onClick={handlePaymentRedirect} disabled={!selectedPayment} style={{ opacity: selectedPayment ? 1 : 0.5 }}>
                       Bayar Sekarang
                     </button>
                   </div>
