@@ -24,12 +24,12 @@ export default function FAQAccordion() {
         <>
           Kami menerima pembayaran melalui transfer bank dan e-wallet. Berikut daftarnya:<br />
           <br />
-          <strong>BRI:</strong> 166201018349500<br />
-          <strong>MANDIRI:</strong> 1440024597335<br />
-          <strong>SEABANK:</strong> 901624712351<br />
-          <strong>BANK JAGO:</strong> 107639852185<br />
-          <strong>DANA:</strong> 083824981369<br />
-          <strong>SHOPEEPAY:</strong> 083824981369
+          <strong>BRI:</strong> 166201018349500 (a.n. SUNANDAR SUHERMAN)<br />
+          <strong>MANDIRI:</strong> 1440024597335 (a.n. SUNANDAR SUHERMAN)<br />
+          <strong>SEABANK:</strong> 901624712351 (a.n. SUNANDAR SUHERMAN)<br />
+          <strong>BANK JAGO:</strong> 107639852185 (a.n. SUNANDAR SUHERMAN)<br />
+          <strong>DANA:</strong> 083824981369 (a.n. SUAEDAH)<br />
+          <strong>SHOPEEPAY:</strong> 083824981369 (a.n. SUNANDAR SUHERMAN)
         </>
       )
     }

@@ -23,12 +23,12 @@ export default function CartDrawer() {
   const [selectedPayment, setSelectedPayment] = useState(null);
 
   const paymentOptions = [
-    { id: "bri", name: "BRI", account: "166201018349500" },
-    { id: "mandiri", name: "MANDIRI", account: "1440024597335" },
-    { id: "seabank", name: "SEABANK", account: "901624712351" },
-    { id: "jago", name: "BANK JAGO", account: "107639852185" },
-    { id: "dana", name: "DANA", account: "083824981369" },
-    { id: "shopeepay", name: "SHOPEEPAY", account: "083824981369" },
+    { id: "bri", name: "BRI", account: "166201018349500", holder: "SUNANDAR SUHERMAN" },
+    { id: "mandiri", name: "MANDIRI", account: "1440024597335", holder: "SUNANDAR SUHERMAN" },
+    { id: "seabank", name: "SEABANK", account: "901624712351", holder: "SUNANDAR SUHERMAN" },
+    { id: "jago", name: "BANK JAGO", account: "107639852185", holder: "SUNANDAR SUHERMAN" },
+    { id: "dana", name: "DANA", account: "083824981369", holder: "SUAEDAH" },
+    { id: "shopeepay", name: "SHOPEEPAY", account: "083824981369", holder: "SUNANDAR SUHERMAN" },
   ];
 
   const handleCloseDrawer = () => setIsDrawerOpen(false);
@@ -260,6 +260,7 @@ Akses digital mohon dikirimkan ke email di atas. Berikut saya lampirkan bukti pe
                       <div style={{ padding: "12px", background: "rgba(0,0,0,0.2)", borderRadius: "4px", textAlign: "center", border: "1px dashed var(--border-subtle)" }}>
                         <p style={{ color: "var(--text-secondary)", marginBottom: "4px" }}>Transfer ke Rekening / Nomor {selectedPayment.name}:</p>
                         <p style={{ fontSize: "16px", fontWeight: "bold", color: "var(--text-primary)", letterSpacing: "1px" }}>{selectedPayment.account}</p>
+                        <p style={{ color: "var(--text-muted)", fontSize: "11px", marginTop: "4px" }}>a.n. {selectedPayment.holder}</p>
                       </div>
                     )}
 
