@@ -58,7 +58,7 @@ Nama Panggilan: ${formData.name}
 Email: ${formData.email}
 Nomor WhatsApp: ${formData.whatsapp}
 
-Akses digital mohon dikirimkan ke email di atas. Terima kasih!`;
+Akses digital mohon dikirimkan ke email di atas. Berikut saya lampirkan bukti pembayaran. Terima kasih!`;
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/6285134791706?text=${encodedMessage}`;
@@ -217,6 +217,21 @@ Akses digital mohon dikirimkan ke email di atas. Terima kasih!`;
                         Rp {formatPrice(calculateCartTotal())}
                       </span>
                     </div>
+                  </div>
+
+                  <div className="payment-methods-block" style={{ marginTop: "16px", padding: "16px", background: "var(--bg-secondary)", border: "1px solid var(--border-subtle)", borderRadius: "var(--border-radius-sharp)", fontSize: "12px" }}>
+                    <p style={{ marginBottom: "12px", fontWeight: "600", color: "var(--text-primary)" }}>Pilihan Metode Pembayaran:</p>
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", color: "var(--text-secondary)" }}>
+                      <div><strong>BRI</strong><br/>166201018349500</div>
+                      <div><strong>MANDIRI</strong><br/>1440024597335</div>
+                      <div><strong>SEABANK</strong><br/>901624712351</div>
+                      <div><strong>BANK JAGO</strong><br/>107639852185</div>
+                      <div><strong>DANA</strong><br/>083824981369</div>
+                      <div><strong>SHOPEEPAY</strong><br/>083824981369</div>
+                    </div>
+                    <p style={{ marginTop: "12px", fontStyle: "italic", fontSize: "11px", color: "var(--text-muted)" }}>
+                      *Selesaikan pembayaran ke salah satu rekening di atas dan kirimkan bukti transfer setelah klik <strong>Bayar Sekarang</strong>.
+                    </p>
                   </div>
 
                   <div className="modal-actions">

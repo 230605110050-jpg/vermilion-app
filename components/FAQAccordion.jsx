@@ -17,6 +17,21 @@ export default function FAQAccordion() {
     {
       question: "Apakah link web kustom ini akan aktif selamanya?",
       answer: "Betul. Seluruh link produk web dari Vermilion Web Labs akan aktif selamanya tanpa batas waktu dan bebas biaya sewa hosting tahunan."
+    },
+    {
+      question: "Metode pembayaran apa saja yang tersedia?",
+      answer: (
+        <>
+          Kami menerima pembayaran melalui transfer bank dan e-wallet. Berikut daftarnya:<br />
+          <br />
+          <strong>BRI:</strong> 166201018349500<br />
+          <strong>MANDIRI:</strong> 1440024597335<br />
+          <strong>SEABANK:</strong> 901624712351<br />
+          <strong>BANK JAGO:</strong> 107639852185<br />
+          <strong>DANA:</strong> 083824981369<br />
+          <strong>SHOPEEPAY:</strong> 083824981369
+        </>
+      )
     }
   ];
 
