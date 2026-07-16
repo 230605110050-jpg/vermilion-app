@@ -110,7 +110,7 @@ Akses digital mohon dikirimkan ke email di atas. Berikut saya lampirkan bukti pe
               <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
-              <p>Keranjang belanja kamu masih kosong. Jelajahi katalog untuk menemukan kado terbaik.</p>
+              <p>Keranjang belanja kamu masih kosong. Lihat produk kami untuk menemukan kado terbaik.</p>
             </div>
           ) : (
             cart.map((item) => (

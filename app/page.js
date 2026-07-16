@@ -17,8 +17,8 @@ export default function Home() {
             Kami merancang dan membangun produk web interaktif, kado digital premium, dan kanvas kenangan terindah bertema gelap dan elegan. Abadikan momen berhargamu di laboratorium kreatif kami.
           </p>
           <div className="hero-actions">
-            <Link href="/catalog" className="order-btn" style={{ padding: "12px 28px" }}>
-              Buka Katalog
+            <Link href="/detail-nightflower" className="order-btn" style={{ padding: "12px 28px" }}>
+              Lihat Produk Kami
             </Link>
             <a href="#cara-kerja" className="action-view">
               Cara Kerja
@@ -41,8 +41,8 @@ export default function Home() {
       {/* Featured Collection Section */}
       <section className="catalog-section" style={{ paddingBottom: "80px" }}>
         <div className="section-header">
-          <h2>Koleksi Terpopuler</h2>
-          <p>Desain produk digital terlaris pilihan klien Vermilion Web Labs.</p>
+          <h2>Produk Unggulan Kami</h2>
+          <p>Desain web interaktif eksklusif pilihan dari Vermilion Web Labs.</p>
         </div>
 
         <div className="products-grid">
@@ -66,7 +66,7 @@ export default function Home() {
           <div className="step-card">
             <div className="step-num">I</div>
             <h3 className="step-title">Pilih Produk</h3>
-            <p className="step-desc">Tentukan desain web interaktif yang paling sesuai dengan kebutuhan/momen Anda dari katalog kami.</p>
+            <p className="step-desc">Pesan desain web interaktif eksklusif kami untuk merayakan momen spesial Anda.</p>
           </div>
 
           <div className="step-card">
@@ -126,8 +126,8 @@ export default function Home() {
         <div className="promo-panel">
           <h2>Where Ideas Become Digital.</h2>
           <p>Saatnya merealisasikan momen dan ide kreatif Anda menjadi produk web interaktif yang premium, mewah, dan abadi.</p>
-          <Link href="/catalog" className="order-btn" style={{ padding: "14px 36px" }}>
-            Mulai Sekarang
+          <Link href="/detail-nightflower" className="order-btn" style={{ padding: "14px 36px" }}>
+            Mulai Pesan
           </Link>
         </div>
       </section>

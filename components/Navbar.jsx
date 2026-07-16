@@ -37,7 +37,7 @@ export default function Navbar() {
           {/* Desktop Links */}
           <div className="nav-links">
             <Link href="/">Home</Link>
-            <Link href="/catalog">Catalog</Link>
+            <Link href="/detail-nightflower">Produk</Link>
             <a href="/#cara-kerja">Cara Kerja</a>
             <a href="/#testimoni">Testimoni</a>
           </div>
@@ -78,8 +78,8 @@ export default function Navbar() {
               </span>
             </button>
 
-            <Link href="/catalog" className="order-btn">
-              Katalog
+            <Link href="/detail-nightflower" className="order-btn">
+              Lihat Produk
             </Link>
 
             <button
@@ -99,11 +99,11 @@ export default function Navbar() {
       {/* Mobile Dropdown Menu */}
       <div id="nav-mobile-dropdown" className={`nav-mobile-dropdown ${isMobileMenuOpen ? "open" : ""}`}>
         <Link href="/" onClick={closeMobileMenu}>Home</Link>
-        <Link href="/catalog" onClick={closeMobileMenu}>Catalog</Link>
+        <Link href="/detail-nightflower" onClick={closeMobileMenu}>Produk</Link>
         <a href="/#cara-kerja" onClick={closeMobileMenu}>Cara Kerja</a>
         <a href="/#testimoni" onClick={closeMobileMenu}>Testimoni</a>
-        <Link href="/catalog" onClick={closeMobileMenu} style={{ color: "var(--accent-gold)", borderBottom: "none", fontWeight: 700 }}>
-          Jelajahi Katalog
+        <Link href="/detail-nightflower" onClick={closeMobileMenu} style={{ color: "var(--accent-gold)", borderBottom: "none", fontWeight: 700 }}>
+          Lihat Produk Kami
         </Link>
       </div>
     </>

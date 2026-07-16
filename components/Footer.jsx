@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="footer-links">
             <h4>Navigasi</h4>
             <Link href="/">Home</Link>
-            <Link href="/catalog">Katalog</Link>
+            <Link href="/detail-nightflower">Produk</Link>
             <a href="/#cara-kerja">Cara Kerja</a>
             <a href="/#testimoni">Testimoni</a>
           </div>
@@ -37,7 +37,7 @@ export default function Footer() {
               Hubungi Admin
             </a>
             <a href="/#faq">FAQ</a>
-            <Link href="/catalog">Cara Order</Link>
+            <a href="/#cara-kerja">Cara Order</a>
           </div>
         </div>
       </div>
