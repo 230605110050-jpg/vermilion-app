@@ -4,10 +4,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { useTheme } from "../context/ThemeContext";
 import { useCart } from "../context/CartContext";
+import { useUser } from "../context/UserContext";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const { calculateTotalItems, setIsDrawerOpen } = useCart();
+  const { userId } = useUser();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -42,6 +44,14 @@ export default function Navbar() {
 
           {/* Actions */}
           <div className="nav-actions">
+            {userId && (
+              <div className="user-badge" style={{ fontSize: "10px", color: "var(--text-secondary)", marginRight: "8px", display: "flex", alignItems: "center", gap: "6px", fontWeight: "600", letterSpacing: "0.05em" }}>
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                <span className="hide-mobile" style={{ display: "none" }} >{userId}</span>
+              </div>
+            )}
             <button
               id="theme-toggle"
               className="theme-toggle-btn"

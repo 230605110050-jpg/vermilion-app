@@ -1,5 +1,6 @@
 import { ThemeProvider } from "../context/ThemeContext";
 import { CartProvider } from "../context/CartContext";
+import { UserProvider } from "../context/UserContext";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CartDrawer from "../components/CartDrawer";
@@ -20,17 +21,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id">
       <body>
-        <ThemeProvider>
-          <CartProvider>
-            <Navbar />
-            {children}
-            <Footer />
-            <CartDrawer />
-            <NotificationToast />
-            <SocialProofWidget />
-            <FloatingWhatsapp />
-          </CartProvider>
-        </ThemeProvider>
+        <UserProvider>
+          <ThemeProvider>
+            <CartProvider>
+              <Navbar />
+              {children}
+              <Footer />
+              <CartDrawer />
+              <NotificationToast />
+              <SocialProofWidget />
+              <FloatingWhatsapp />
+            </CartProvider>
+          </ThemeProvider>
+        </UserProvider>
       </body>
     </html>
   );

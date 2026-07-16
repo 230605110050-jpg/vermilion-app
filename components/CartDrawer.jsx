@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useCart } from "../context/CartContext";
+import { useUser } from "../context/UserContext";
 
 export default function CartDrawer() {
   const {
@@ -15,6 +16,8 @@ export default function CartDrawer() {
     isCheckoutModalOpen,
     setIsCheckoutModalOpen,
   } = useCart();
+  
+  const { userId } = useUser();
 
   const totalItems = calculateTotalItems();
 
@@ -64,6 +67,7 @@ ${itemDetailsText}---------------------------------
 *TOTAL:* Rp ${formatPrice(calculateCartTotal())}
 
 *DATA PEMBELI*
+ID Pengguna: ${userId}
 Nama Panggilan: ${formData.name}
 Email: ${formData.email}
 Nomor WhatsApp: ${formData.whatsapp}
