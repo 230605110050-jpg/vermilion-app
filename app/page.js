@@ -1,6 +1,7 @@
 import FAQAccordion from "../components/FAQAccordion";
 import Link from "next/link";
 import ProductCard from "../components/ProductCard";
+import CurvedLoop from "../components/CurvedLoop";
 import { PRODUCTS } from "../data/products";
 
 export default function Home() {
@@ -37,6 +38,9 @@ export default function Home() {
           </svg>
         </div>
       </header>
+
+      {/* Curved Marquee Section */}
+      <CurvedLoop />
 
       {/* Featured Collection Section */}
       <section className="catalog-section" style={{ paddingBottom: "80px" }}>
