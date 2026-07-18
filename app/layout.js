@@ -7,6 +7,7 @@ import CartDrawer from "../components/CartDrawer";
 import NotificationToast from "../components/NotificationToast";
 import SocialProofWidget from "../components/SocialProofWidget";
 import FloatingWhatsapp from "../components/FloatingWhatsapp";
+import UserCursor from "../components/UserCursor";
 import "./globals.css";
 
 export const metadata = {
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
               <NotificationToast />
               <SocialProofWidget />
               <FloatingWhatsapp />
+              <UserCursor />
             </CartProvider>
           </ThemeProvider>
         </UserProvider>
