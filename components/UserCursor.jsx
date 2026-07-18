@@ -79,8 +79,7 @@ export default function UserCursor(props = {}) {
     const [hovering, setHovering] = useState(false);
     const [pressed, setPressed] = useState(false);
 
-    const arrowSpring = useMemo(() => ({ stiffness: 380, damping: 32, mass: 0.6 }), []);
-    const labelSpringCfg = useMemo(() => ({ stiffness: 220, damping: 26, mass: 0.7 }), []);
+    const labelSpringCfg = useMemo(() => ({ stiffness: 500, damping: 28, mass: 0.4 }), []);
 
     const resolvedOffset = useMemo(
         () => ({
@@ -113,8 +112,10 @@ export default function UserCursor(props = {}) {
     const mouseX = useMotionValue(-9999);
     const mouseY = useMotionValue(-9999);
 
-    const arrowX = useSpring(mouseX, arrowSpring);
-    const arrowY = useSpring(mouseY, arrowSpring);
+    // Make the arrow track instantly without spring lag
+    const arrowX = mouseX;
+    const arrowY = mouseY;
+    // Label trails slightly but much faster now
     const labelX = useSpring(mouseX, labelSpringCfg);
     const labelY = useSpring(mouseY, labelSpringCfg);
 
