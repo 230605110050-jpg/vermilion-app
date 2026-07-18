@@ -8,10 +8,13 @@ import {
     useTransform,
     animate,
 } from "framer-motion";
+import { useTheme } from "../context/ThemeContext";
 
 const useIsStaticRenderer = () => false;
 
 export default function UserCursor(props = {}) {
+    const { theme } = useTheme();
+
     const defaultProps = {
         color: "var(--accent-gold)", // Vermilion Gold
         size: 31,
@@ -20,7 +23,7 @@ export default function UserCursor(props = {}) {
         offsetY: 0,
         showLabel: true,
         name: "vermilion",
-        textColor: "#000000",
+        textColor: theme === "light" ? "#FFFFFF" : "#000000",
         labelTiltStrength: 25,
         labelOffsetUseDefault: true,
         labelOffsetX: 25,
