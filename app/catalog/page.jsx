@@ -11,6 +11,14 @@ export default function Catalog() {
       tags: ["Birthday", "Special Gift", "Interactive"],
       animationDelay: "0.35s",
     },
+    {
+      key: "redflowers",
+      product: PRODUCTS.redflowers,
+      badge: "Premium Invitation",
+      tagLabel: "For",
+      tags: ["Wedding", "Digital Invite", "Elegant"],
+      animationDelay: "0.45s",
+    },
   ];
 
   return (

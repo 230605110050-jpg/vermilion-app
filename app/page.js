@@ -17,8 +17,8 @@ export default function Home() {
             Kami merancang dan membangun produk web interaktif, kado digital premium, dan kanvas kenangan terindah bertema gelap dan elegan. Abadikan momen berhargamu di laboratorium kreatif kami.
           </p>
           <div className="hero-actions">
-            <Link href="/detail-nightflower" className="order-btn" style={{ padding: "12px 28px" }}>
-              Lihat Produk Kami
+            <Link href="/catalog" className="order-btn" style={{ padding: "12px 28px" }}>
+              Lihat Katalog
             </Link>
             <a href="#cara-kerja" className="action-view">
               Cara Kerja
@@ -51,6 +51,12 @@ export default function Home() {
             badge="Premium Gift"
             tagLabel="For"
             tags={["Birthday", "Special Gift", "Interactive"]}
+          />
+          <ProductCard
+            product={PRODUCTS.redflowers}
+            badge="Premium Invitation"
+            tagLabel="For"
+            tags={["Wedding", "Digital Invite", "Elegant"]}
           />
         </div>
       </section>
@@ -126,8 +132,8 @@ export default function Home() {
         <div className="promo-panel">
           <h2>Where Ideas Become Digital.</h2>
           <p>Saatnya merealisasikan momen dan ide kreatif Anda menjadi produk web interaktif yang premium, mewah, dan abadi.</p>
-          <Link href="/detail-nightflower" className="order-btn" style={{ padding: "14px 36px" }}>
-            Mulai Pesan
+          <Link href="/catalog" className="order-btn" style={{ padding: "14px 36px" }}>
+            Lihat Katalog
           </Link>
         </div>
       </section>

@@ -11,7 +11,8 @@ const SOCIAL_PRODUCTS = [
   "Vermilion Letter",
   "Vermilion Arcade",
   "Vermilion Retro",
-  "Vermilion Night Flower"
+  "Vermilion Night Flower",
+  "Vermilion Red Flowers"
 ];
 const SOCIAL_ACTIONS = [
   "baru saja memesan",
