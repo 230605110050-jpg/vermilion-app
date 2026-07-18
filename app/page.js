@@ -2,6 +2,7 @@ import FAQAccordion from "../components/FAQAccordion";
 import Link from "next/link";
 import ProductCard from "../components/ProductCard";
 import CurvedLoop from "../components/CurvedLoop";
+import TrueFocus from "../components/TrueFocus";
 import { PRODUCTS } from "../data/products";
 
 export default function Home() {
@@ -10,8 +11,16 @@ export default function Home() {
       {/* Hero Split-Screen Section */}
       <header className="hero">
         <div className="hero-content">
-          <h1>Vermilion /<br />Web Labs.</h1>
-          <p style={{ fontSize: "1.2rem", color: "var(--accent-gold)", fontWeight: 500, letterSpacing: "0.05em", marginBottom: "-10px" }}>
+          <TrueFocus 
+            sentence="Vermilion / Web Labs." 
+            separator=" " 
+            manualMode={false} 
+            blurAmount={3} 
+            borderColor="var(--accent-gold)" 
+            animationDuration={0.8} 
+            pauseBetweenAnimations={1.5} 
+          />
+          <p style={{ fontSize: "1.2rem", color: "var(--accent-gold)", fontWeight: 500, letterSpacing: "0.05em", marginBottom: "-10px", marginTop: "10px" }}>
             Where Ideas Become Digital.
           </p>
           <p>
