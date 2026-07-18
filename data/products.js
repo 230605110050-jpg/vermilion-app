@@ -10,5 +10,11 @@ export const PRODUCTS = {
     name: 'Vermilion Red Flowers',
     price: 55000,
     image: '/assets/image/red-flower/redflower-preview.jpeg'
+  },
+  customweb: {
+    id: 'customweb',
+    name: 'Custom Web Request',
+    price: 0,
+    image: '/assets/image/custom-cover.svg'
   }
 };

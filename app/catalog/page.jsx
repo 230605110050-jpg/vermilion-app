@@ -19,6 +19,14 @@ export default function Catalog() {
       tags: ["Wedding", "Digital Invite", "Elegant"],
       animationDelay: "0.45s",
     },
+    {
+      key: "customweb",
+      product: PRODUCTS.customweb,
+      badge: "By Request",
+      tagLabel: "For",
+      tags: ["Any Event", "Company Profile", "Custom"],
+      animationDelay: "0.55s",
+    },
   ];
 
   return (

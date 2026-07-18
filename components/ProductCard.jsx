@@ -37,8 +37,14 @@ export default function ProductCard({ product, badge, tagLabel, tags, glowColor,
               )}
             </div>
             <div className="card-price-badge">
-              <span className="currency">Rp</span>
-              {formatPrice(product.price)}
+              {product.price === 0 ? (
+                <span style={{ fontSize: "14px", letterSpacing: "0.1em", textTransform: "uppercase" }}>By Request</span>
+              ) : (
+                <>
+                  <span className="currency">Rp</span>
+                  {formatPrice(product.price)}
+                </>
+              )}
             </div>
           </div>
           <ul className="features-list">
